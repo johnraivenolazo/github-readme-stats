@@ -102,6 +102,7 @@ export default async (req, res) => {
         card_width: parseInt(card_width, 10),
         hide_rank: parseBoolean(hide_rank),
         include_all_commits: parseBoolean(include_all_commits),
+        include_all_time_commits: parseBoolean(include_all_time_commits),
         line_height,
         title_color,
         ring_color,

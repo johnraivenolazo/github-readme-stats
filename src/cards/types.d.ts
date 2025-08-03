@@ -20,6 +20,7 @@ export type StatCardOptions = CommonOptions & {
   card_width: number;
   hide_rank: boolean;
   include_all_commits: boolean;
+  include_all_time_commits: boolean;
   line_height: number | string;
   custom_title: string;
   disable_animations: boolean;

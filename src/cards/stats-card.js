@@ -222,6 +222,7 @@ const renderStatsCard = (stats, options = {}) => {
     card_width,
     hide_rank = false,
     include_all_commits = false,
+    include_all_time_commits = false,
     line_height = 25,
     title_color,
     ring_color,
@@ -274,7 +275,9 @@ const renderStatsCard = (stats, options = {}) => {
   STATS.commits = {
     icon: icons.commits,
     label: `${i18n.t("statcard.commits")}${
-      include_all_commits ? "" : ` (${new Date().getFullYear()})`
+      include_all_commits || include_all_time_commits
+        ? ""
+        : ` (${new Date().getFullYear()})`
     }`,
     value: totalCommits,
     id: "commits",
@@ -517,7 +520,9 @@ const renderStatsCard = (stats, options = {}) => {
     .map((key) => {
       if (key === "commits") {
         return `${i18n.t("statcard.commits")} ${
-          include_all_commits ? "" : `in ${new Date().getFullYear()}`
+          include_all_commits || include_all_time_commits
+            ? ""
+            : `in ${new Date().getFullYear()}`
         } : ${STATS[key].value}`;
       }
       return `${STATS[key].label}: ${STATS[key].value}`;
